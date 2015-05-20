@@ -5,11 +5,14 @@ module BookmarkManager
       post '/links' do
         url = params['url']
         title = params['title']
+        link = Link.create(url: url, title: title)
         tags = params['tags'].split(' ')
-        tags.map do |tag| 
-          Tag.first_or_create(text: tag)
-          Link.create(url: url, title: title, tags: )
+        tags.each do |tag| 
+          link.tags << Tag.first_or_create(text: tag)
+          link.save
         end
+
+
 
         redirect to('/')
       end

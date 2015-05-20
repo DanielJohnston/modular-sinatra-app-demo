@@ -9,6 +9,7 @@ group :development, :test do
   gem 'cucumber'
   gem 'cucumber-sinatra'
   gem 'launchy'
+  gem 'byebug'
   gem 'rspec'
   gem 'shotgun'
   gem 'database_cleaner'

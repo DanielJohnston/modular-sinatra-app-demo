@@ -29,6 +29,8 @@ module BookmarkManager
 
     set :partial_template_engine, :erb
     set :views, Proc.new { File.join('app', 'views') }
+    set :public_folder, Proc.new { File.join('public') }
+
 
     get '/' do
       @links = Link.all
@@ -40,7 +42,3 @@ module BookmarkManager
     end
   end
 end
-
-
-
-

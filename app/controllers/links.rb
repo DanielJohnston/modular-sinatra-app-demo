@@ -1,7 +1,19 @@
-post '/links' do
-    url = params['url']
-    title = params['title']
-    tags = params['tags'].split(' ').map do |tag| Tag.first_or_create(text: tag) end
-    Link.create(url: url, title: title, tags: tags)
-    redirect to('/')
+module BookmarkManager
+  module Routes
+    class Links < Base
+
+      post '/links' do
+        url = params['url']
+        title = params['title']
+        tags = params['tags'].split(' ')
+        tags.map do |tag| 
+          Tag.first_or_create(text: tag)
+          Link.create(url: url, title: title, tags: )
+        end
+
+        redirect to('/')
+      end
+
+    end
   end
+end

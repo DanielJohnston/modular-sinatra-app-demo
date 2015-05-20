@@ -13,7 +13,6 @@ require_relative 'controllers/users'
 require_relative 'controllers/tags'
 require_relative 'controllers/links'
 require_relative 'controllers/sessions'
-require 'byebug'
 
 module BookmarkManager
   class Application < Sinatra::Application
